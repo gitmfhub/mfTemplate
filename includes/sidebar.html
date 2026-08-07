@@ -1,0 +1,9 @@
+<div class="labels-cloud">
+  <h3>🏷️ التصنيفات</h3>
+  {% assign all_labels = site.posts | map: 'labels' | compact | join: ',' | split: ',' | uniq %}
+  {% for label in all_labels %}
+    <a href="/mftemplate/labels/#{{ label | slugify }}" class="label-tag">
+      {{ label }}
+    </a>
+  {% endfor %}
+</div>
