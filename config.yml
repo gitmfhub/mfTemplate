@@ -1,0 +1,15 @@
+title: "مدونتي التقنية"
+description: "مقالات وحلول برمجية لتطوير المطورين"
+url: "https://موقعك.كوم"  # غيّره لنطاقك
+baseurl: ""
+
+# إعدادات Jekyll
+permalink: /:title/
+markdown: kramdown
+highlighter: rouge
+
+# تضمين المجلدات
+include: [_pages]
+
+# التحليلات (اختياري)
+google_analytics: "G-XXXXXXXXXX"  # ضع معرفك إن وجد
