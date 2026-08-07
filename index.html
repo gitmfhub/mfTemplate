@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<div id="head-placeholder"></div>
+<script>
+  fetch('head.html')  // نفس المجلد
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('head-placeholder').outerHTML = data;
+    });
+</script>
+<body>
+  <!-- محتوى المقال -->
+</body>
+</html>
