@@ -1,10 +1,20 @@
-<div class="post-labels">
+---
+layout: default
+---
+
+<article>
+  <h1>{{ page.title }}</h1>
+  <p class="post-date">{{ page.date | date: "%Y-%m-%d" }}</p>
+  
   {% if page.labels %}
-    <span class="labels-title">🏷️ الوسوم:</span>
-    {% for label in page.labels %}
-      <a href="/mftemplate/labels/{{ label | slugify }}" class="label-tag">
-        {{ label }}
-      </a>
-    {% endfor %}
+    <div class="labels">
+      {% for label in page.labels %}
+        <span class="label-tag">{{ label }}</span>
+      {% endfor %}
+    </div>
   {% endif %}
-</div>
+
+  <div class="content">
+    {{ content }}
+  </div>
+</article>
