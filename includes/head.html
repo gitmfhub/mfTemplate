@@ -41,5 +41,11 @@
 {% feed_meta %}
 {% seo %}
 {% endif %}
+<link rel="manifest" href="/mftemplate/assets/manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/mftemplate/sw.js');
+  }
+</script>
 
 
