@@ -1,22 +1,67 @@
 ---
 layout: default
-title: "الصفحة الرئيسية"
-description: "مدونة تقنية تقدم مقالات وحلول برمجية"
+title: "MF Template - الرئيسية"
+description: "مرحباً بك في MF Template، قالب احترافي مبني على Jekyll"
 ---
 
+<!-- Hero Section -->
 <section class="hero">
-    <h1>مرحباً بكم في {{ site.title }}</h1>
-    <p>{{ site.description }}</p>
+    <div class="container">
+        <h1>مرحباً بك في <span class="highlight">MF Template</span></h1>
+        <p class="subtitle">قالب احترافي مبني على Jekyll مع دعم كامل للـ HTML</p>
+        <a href="#posts" class="btn-primary">استعرض المقالات</a>
+    </div>
 </section>
 
-<section class="articles">
-    <h2>أحدث المقالات</h2>
-    <ul>
-        {% for post in site.posts limit:5 %}
-        <li>
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        </li>
-        {% endfor %}
-    </ul>
+<!-- Posts Section -->
+<section id="posts" class="posts-section">
+    <div class="container">
+        <h2>آخر المقالات</h2>
+        <div class="posts-grid">
+            {% for post in site.posts limit:6 %}
+            <article class="post-card">
+                <div class="post-card-content">
+                    <div class="post-meta">
+                        <span class="post-date">{{ post.date | date: "%d %B, %Y" }}</span>
+                        {% if post.categories %}
+                        <span class="post-category">{{ post.categories | join: ", " }}</span>
+                        {% endif %}
+                    </div>
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="read-more">اقرأ المزيد →</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <h2>مميزات القالب</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">📝</div>
+                <h3>مقالات HTML</h3>
+                <p>اكتب مقالاتك بصيغة HTML النقية مع دعم كامل للعناصر</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎨</div>
+                <h3>تصميم عصري</h3>
+                <p>تصميم أنيق ومتجاوب مع جميع أحجام الشاشات</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h3>أداء سريع</h3>
+                <p>مبني على Jekyll لتوليد صفحات ثابتة سريعة التحميل</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🔧</div>
+                <h3>سهولة التخصيص</h3>
+                <p>هيكل منظم يسهل تعديل وتوسيع القالب</p>
+            </div>
+        </div>
+    </div>
 </section>
