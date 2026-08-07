@@ -1,0 +1,23 @@
+---
+layout: default
+title: التصنيفات
+permalink: /labels/
+---
+
+<h1>📂 جميع التصنيفات</h1>
+
+{% assign all_labels = site.posts | map: 'labels' | compact | join: ',' | split: ',' | uniq %}
+
+{% for label in all_labels %}
+  <h2 id="{{ label | slugify }}">{{ label }}</h2>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.labels contains label %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endfor %}
