@@ -1,0 +1,52 @@
+# Site settings
+title: "MF Template"
+email: "mahmoudfoudamail@gmail.com"
+description: "موقع قالب احترافي مبني على Jekyll مع دعم كامل للـ HTML"
+baseurl: "" # المسار الفرعي إذا كان المشروع في مجلد فرعي
+url: "https://gitmfhub.github.io/mftemplate/" # رابط الموقع النهائي
+#twitter_username: ""
+github_username: "gitmfhub"
+#linkedin_username: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title.html
+timezone: "Africa/Cairo"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "MF Team"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Include directories
+include:
+  - pages
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - README.md
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Feed settings
+feed:
+  path: feed.xml
